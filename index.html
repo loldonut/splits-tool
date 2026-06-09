@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LibreSplit Splits Creation Tool</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header><h2>LibreSplit Splits Creation Tool/Editor</h2></header>
+    <div class="container">
+      <div class="panel">
+        <div class="drop" id="dropZone">Drop LibreSplit JSON Here</div>
+        <input type="file" id="fileInput" accept=".json,application/json" />
+        <label>Title<input id="title" /></label>
+        <label
+          >Attempt Count (Optional)<input id="attempt_count" type="number"
+        /></label>
+        <label>Start Delay (Optional)<input id="start_delay" /></label>
+        <label>World Record (Optional)<input id="world_record" /></label>
+        <div class="row">
+          <label>Width<input id="width" type="number" /></label>
+          <label>Height<input id="height" type="number" /></label>
+        </div>
+        <button class="primary" onclick="exportFile()">Export</button>
+        <button onclick="undo()">Undo</button>
+        <button onclick="redo()">Redo</button>
+      </div>
+      <div class="panel">
+        <h3>Splits</h3>
+        <div id="splits"></div>
+        <button class="primary" onclick="addSplit()">Add Split</button>
+      </div>
+      <div class="panel">
+        <h3>JSON Preview</h3>
+        <pre id="preview"></pre>
+      </div>
+    </div>
+  </body>
+</html>
